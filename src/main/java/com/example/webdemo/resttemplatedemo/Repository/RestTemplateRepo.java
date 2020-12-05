@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.webdemo.resttemplatedemo.entity.RestTemplateEntity1;
 
 @Repository
-public interface RestTemplateRepo extends JpaRepository<RestTemplateEntity1, Double> {
+public interface RestTemplateRepo extends JpaRepository<RestTemplateEntity1, String> {
 
 }

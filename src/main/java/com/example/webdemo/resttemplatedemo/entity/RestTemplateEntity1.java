@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name="history1")
 public class RestTemplateEntity1 {
 
+	@Id
 	@Column(name="symbol")
 	private String symbol;
 
@@ -36,18 +37,24 @@ public class RestTemplateEntity1 {
 		
 		@Column(name="conversiontype")
 		private String conversionType;
+		
 		@Column(name="buy")
 		private double buy;
+		
 		@Column(name="sell")
 		private double sell;
+		
 		@Column(name="at")
 		private long at;
 		
 		public RestTemplateEntity1() {}
 
-		public RestTemplateEntity1(double close, double high, double low, double open, double volumefrom,
+		
+
+		public RestTemplateEntity1(String symbol, double close, double high, double low, double open, double volumefrom,
 				double volumeto, String conversionType, double buy, double sell, long at) {
 			super();
+			this.symbol = symbol;
 			this.close = close;
 			this.high = high;
 			this.low = low;
@@ -59,6 +66,20 @@ public class RestTemplateEntity1 {
 			this.sell = sell;
 			this.at = at;
 		}
+
+
+
+		public String getSymbol() {
+			return symbol;
+		}
+
+
+
+		public void setSymbol(String symbol) {
+			this.symbol = symbol;
+		}
+
+
 
 		public double getClose() {
 			return close;
